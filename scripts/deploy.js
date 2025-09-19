@@ -1,9 +1,17 @@
-require("@nomiclabs/hardhat-ethers");
+async function main() {
+  const [deployer] = await ethers.getSigners();
+  console.log("Deploying contracts with:", deployer.address);
 
-module.exports = {
-  solidity: "0.8.20",
-  defaultNetwork: "hardhat",
-  networks: {
-    hardhat: {},
-  },
-};
+  const FluentProof = await ethers.getContractFactory("FluentProof");
+  const contract = await FluentProof.deploy("Fluent Project Build");
+
+  await contract.deployed();
+  console.log("Contract deployed to:", contract.address);
+}
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
