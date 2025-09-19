@@ -1,0 +1,25 @@
+{
+  "name": "fluent-proof-of-build",
+  "version": "1.0.0",
+  "description": "A simple smart contract for Fluent Proof of Build submission",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat run scripts/deploy.js"
+  },
+  "keywords": [
+    "solidity",
+    "hardhat",
+    "smart-contract",
+    "fluent",
+    "proof-of-build"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "ethers": "^6.7.0",
+    "hardhat": "^2.22.1"
+  }
+}
